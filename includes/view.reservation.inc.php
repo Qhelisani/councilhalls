@@ -27,7 +27,7 @@ if(isset($_SESSION['user_id'])){
                         <th scope="col">Time Zone</th>
                         <th scope="col">Telephone</th>
                         <th scope="col">Register Date</th>
-                        <th scope="col">Comments</th>
+                        <th scope="col">Hall Name</th>
                         <th class="table-danger" scope="col"></th>
                     </tr>
                 </thead> ';
@@ -43,7 +43,7 @@ if(isset($_SESSION['user_id'])){
                       <td>".$row["time_zone"]."</td>
                       <td>".$row["telephone"]."</td>
                       <td>".$row["reg_date"]."</td>
-                      <td><textarea readonly>".$row["comment"]."</textarea></td>
+                      <td><textarea readonly>".$row["hallame"]."</textarea></td>
                       <td class='table-danger'><button type='submit' name='delete-submit' class='btn btn-danger btn-sm'>Cancel</button></td>
                           </form>
                     </tr>
@@ -79,7 +79,7 @@ if(isset($_SESSION['user_id'])){
                         <th scope="col">Time Zone</th>
                         <th scope="col">Telephone</th>
                         <th scope="col">Register Date</th>
-                        <th scope="col">Comments</th>
+                        <th scope="col">Hall Name</th>
                         <th class="table-danger" scope="col"></th>
                     </tr>
                 </thead> ';
@@ -97,7 +97,7 @@ if(isset($_SESSION['user_id'])){
                       <td>".$row["time_zone"]."</td>
                       <td>".$row["telephone"]."</td>
                       <td>".$row["reg_date"]."</td>
-                      <td><textarea readonly>".$row["comment"]."</textarea></td>
+                      <td><textarea readonly>".$row["hallname"]."</textarea></td>
                       <td class='table-danger'><button type='submit' name='delete-submit' class='btn btn-danger btn-sm'>Cancel</button></td>
                           </form>
                     </tr>

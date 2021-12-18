@@ -34,8 +34,8 @@ if(isset($_SESSION['user_id'])){
         else if($_GET['error3'] == "invalidtele") {   
             echo '<h5 class="bg-danger text-center">Invalid Telephone, Pleast try again!</h5>';
         }
-        else if($_GET['error3'] == "invalidcomment") {   
-            echo '<h5 class="bg-danger text-center">Invalid Comment, Pleast try again!</h5>';
+        else if($_GET['error3'] == "invalidhallname") {   
+            echo '<h5 class="bg-danger text-center">Invalid Hall Namw, Pleast try again!</h5>';
         }
         else if($_GET['error3'] == "invalidguests") {   
             echo '<h5 class="bg-danger text-center">Invalid Guests, Pleast try again!</h5>';
@@ -95,9 +95,8 @@ if(isset($_SESSION['user_id'])){
                 <small class="form-text text-muted">Telephone must be 6-20 characters long</small>
             </div>
             <div class="form-group">
-            <label>Enter extra Comments</label>
-                <textarea class="form-control" name="comments" placeholder="Comments" rows="3"></textarea>
-                <small class="form-text text-muted">Comments must be less than 200 characters</small>
+            <label>Select Hall Name</label>
+                <textarea class="form-control" name="hallname" placeholder="Hall Name" rows="3"></textarea>
             </div>        
             <div class="form-group">
 		<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>

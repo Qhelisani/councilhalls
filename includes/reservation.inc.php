@@ -19,7 +19,7 @@ require 'dbh.inc.php';
     $time= $_POST['time'];
     $guests= $_POST['num_guests'];
     $tele = $_POST['tele'];
-    $comments = $_POST['comments'];
+    $hallname = $_POST['hallname'];
     
     if($guests==1 || $guests==2){
         $tables=1;
@@ -49,8 +49,8 @@ require 'dbh.inc.php';
         header("Location: ../reservation.php?error3=invalidtele");
         exit();
     }    
-        else if(!preg_match("/^[a-zA-Z 0-9]*$/", $comments) || !between($comment,0,200)) {
-        header("Location: ../reservation.php?error3=invalidcomment");
+        else if(!preg_match("/^[a-zA-Z 0-9]*$/", $hallname) || !between($hallname,0,200)) {
+        header("Location: ../reservation.php?error3=invalidhallame");
         exit();
     }
     
@@ -83,14 +83,14 @@ require 'dbh.inc.php';
     
     else {
     
-         $sql = "INSERT INTO reservation(f_name, l_name, num_guests, num_tables, rdate, time_zone, telephone, comment, user_fk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+         $sql = "INSERT INTO reservation(f_name, l_name, num_guests, num_tables, rdate, time_zone, telephone, hallname, user_fk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
                  if(!mysqli_stmt_prepare($stmt, $sql)){
                     header("Location: ../reservation.php?error3=sqlerror1");
                     exit();
                 }
                 else {       
-                    mysqli_stmt_bind_param($stmt, "sssssssss", $fname, $lname, $guests, $tables, $date, $time, $tele, $comments, $user);
+                    mysqli_stmt_bind_param($stmt, "sssssssss", $fname, $lname, $guests, $tables, $date, $time, $tele, $hallname, $user);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../reservation.php?reservation=success");
                     exit();
